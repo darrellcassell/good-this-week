@@ -697,6 +697,137 @@
     .submit-section h3 { font-size: 32px; }
     .topbar { padding: 10px 20px; font-size: 10px; gap: 10px; flex-wrap: wrap; justify-content: center; }
     .masthead { padding: 32px 24px 20px; }
+
+    /* ========== SUBSCRIBE MODAL ========== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.65);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #faf9f5;
+  max-width: 480px;
+  width: 100%;
+  padding: 48px 40px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  font-family: Georgia, serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  font-family: Georgia, serif;
+  padding: 4px 8px;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-title {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  color: #111;
+}
+
+.modal-title em {
+  color: #c64a78;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.modal-pitch {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin: 16px 0 28px 0;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-form input[type="email"] {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.modal-form input[type="email"]:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.modal-form button {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  background: #111;
+  color: #faf9f5;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.modal-form button:hover {
+  background: #c64a78;
+}
+
+.modal-footer {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 36px 24px;
+  }
+  .modal-title {
+    font-size: 26px;
+  }
+}
   }
 </style>
 </head>
@@ -708,7 +839,7 @@
     <div class="topbar">
       <span>Issue no. 47</span>
       <span>Week of April 19, 2026</span>
-      <a href="#submit">Subscribe →</a>
+      <a href="#" data-subscribe>Subscribe →</a>
     </div>
 
     <!-- MASTHEAD -->
@@ -968,6 +1099,61 @@
     }, 5000);
   }
 </script>
+<!-- Subscribe Modal -->
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <h2 class="modal-title">Good: <em>this week</em></h2>
+    <p class="modal-pitch">Get the next issue Sunday morning. Seven days of reasons to feel a little better. No spam. Unsubscribe anytime.</p>
+    <form
+      class="modal-form"
+      action="https://buttondown.com/api/emails/embed-subscribe/newsthisweek"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/newsthisweek', 'popupwindow')"
+    >
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="modal-footer">A free weekly publication</p>
+  </div>
+</div>
 
+<script>
+  (function() {
+    const modal = document.getElementById('subscribeModal');
+    const closeBtn = document.getElementById('modalClose');
+    const subscribeTriggers = document.querySelectorAll('[data-subscribe]');
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    subscribeTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
