@@ -1023,13 +1023,14 @@
         <div class="kicker">Got something good?</div>
         <h3>Send us a story.</h3>
         <p class="intro">We read every submission. If it made you smile, it might make the next issue. Personal stories welcome.</p>
-        <div class="submit-form">
-          <input type="text" id="name" placeholder="Your name" />
-          <input type="email" id="email" placeholder="Your email" />
-          <textarea id="story" placeholder="What's the good news?"></textarea>
-          <button onclick="handleSubmit()">Submit the good news →</button>
-          <div class="submit-success" id="success">Thank you — your story is in. We'll read it this week.</div>
-        </div>
+        <form class="submit-form" id="storySubmitForm">
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <input type="email" id="email" name="email" placeholder="Your email" required />
+          <textarea id="story" name="story" placeholder="What's the good news?" required></textarea>
+          <button type="submit">Submit the good news →</button>
+          <div class="submit-success" id="success" style="display: none;">Thank you — your story is in. We'll read it this week.</div>
+          <div id="storyError" style="display: none; color: #B5454A; font-style: italic;">Something went wrong. Please try again or email hello@goodthisweek.news.</div>
+        </form>
       </div>
 
       <!-- ARCHIVE -->
@@ -1073,6 +1074,40 @@
 
   </div>
 
+<script>
+  (function() {
+    const storyForm = document.getElementById('storySubmitForm');
+    if (storyForm) {
+      storyForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = storyForm.querySelector('button[type="submit"]');
+        const success = document.getElementById('success');
+        const error = document.getElementById('storyError');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        error.style.display = 'none';
+        try {
+          const response = await fetch('https://formspree.io/f/xrerlpkb', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(storyForm)
+          });
+          if (response.ok) {
+            storyForm.reset();
+            btn.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            throw new Error('Server error');
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Submit the good news →';
+          error.style.display = 'block';
+        }
+      });
+    }
+  })();
+</script>
 <script>
   (function() {
     const modal = document.getElementById('subscribeModal');
