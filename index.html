@@ -1147,15 +1147,46 @@
     const modal = document.getElementById('subscribeModal');
     const closeBtn = document.getElementById('modalClose');
     const subscribeTriggers = document.querySelectorAll('[data-subscribe]');
+    const form = document.getElementById('subscribeForm');
+    const emailInput = document.getElementById('subscribeEmail');
+    const submitButton = document.getElementById('subscribeButton');
+    const formState = document.getElementById('modalFormState');
+    const successState = document.getElementById('modalSuccessState');
+    const errorState = document.getElementById('modalErrorState');
+    const tryAgainButton = document.getElementById('tryAgainButton');
 
     function openModal() {
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      resetModal();
     }
 
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function resetModal() {
+      formState.style.display = 'block';
+      successState.style.display = 'none';
+      errorState.style.display = 'none';
+      if (emailInput) emailInput.value = '';
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Subscribe';
+      }
+    }
+
+    function showSuccess() {
+      formState.style.display = 'none';
+      successState.style.display = 'block';
+      errorState.style.display = 'none';
+    }
+
+    function showError() {
+      formState.style.display = 'none';
+      successState.style.display = 'none';
+      errorState.style.display = 'block';
     }
 
     subscribeTriggers.forEach(trigger => {
@@ -1176,6 +1207,37 @@
         closeModal();
       }
     });
+
+    if (tryAgainButton) {
+      tryAgainButton.addEventListener('click', resetModal);
+    }
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Subscribing...';
+
+        try {
+          const formData = new FormData();
+          formData.append('email', email);
+
+          const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/goodthisweek', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+
+          showSuccess();
+        } catch (err) {
+          console.error('Subscribe error:', err);
+          showError();
+        }
+      });
+    }
   })();
 </script>
 </body>
