@@ -1074,51 +1074,138 @@
   </div>
 
 <script>
-  // Tiny bit of JavaScript — just handles the submission form
-  function handleSubmit() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const story = document.getElementById('story').value.trim();
+  (function() {
+    const modal = document.getElementById('subscribeModal');
+    const closeBtn = document.getElementById('modalClose');
+    const subscribeTriggers = document.querySelectorAll('[data-subscribe]');
+    const form = document.getElementById('subscribeForm');
+    const emailInput = document.getElementById('subscribeEmail');
+    const submitButton = document.getElementById('subscribeButton');
+    const formState = document.getElementById('modalFormState');
+    const successState = document.getElementById('modalSuccessState');
+    const errorState = document.getElementById('modalErrorState');
+    const tryAgainButton = document.getElementById('tryAgainButton');
 
-    if (!name || !email || !story) {
-      alert('Please fill in all three fields — we want to know who sent the sunshine.');
-      return;
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      resetModal();
     }
 
-    // Show success message
-    document.getElementById('success').style.display = 'block';
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-    // Clear the form
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('story').value = '';
+    function resetModal() {
+      formState.style.display = 'block';
+      successState.style.display = 'none';
+      errorState.style.display = 'none';
+      if (emailInput) emailInput.value = '';
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Subscribe';
+      }
+    }
 
-    // Hide the message after 5 seconds
-    setTimeout(() => {
-      document.getElementById('success').style.display = 'none';
-    }, 5000);
-  }
+    function showSuccess() {
+      formState.style.display = 'none';
+      successState.style.display = 'block';
+      errorState.style.display = 'none';
+    }
+
+    function showError() {
+      formState.style.display = 'none';
+      successState.style.display = 'none';
+      errorState.style.display = 'block';
+    }
+
+    subscribeTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    if (tryAgainButton) {
+      tryAgainButton.addEventListener('click', resetModal);
+    }
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Subscribing...';
+
+        try {
+          const formData = new FormData();
+          formData.append('email', email);
+
+          const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/goodthisweek', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+
+          // With mode: 'no-cors', we can't read the response, but if no error was thrown, the request went through
+          showSuccess();
+        } catch (err) {
+          console.error('Subscribe error:', err);
+          showError();
+        }
+      });
+    }
+  })();
 </script>
 <!-- Subscribe Modal -->
 <div class="modal-overlay" id="subscribeModal">
   <div class="modal-content">
     <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    <h2 class="modal-title">Good: <em>this week</em></h2>
-    <p class="modal-pitch">Get the next issue Sunday morning. Seven days of reasons to feel a little better. No spam. Unsubscribe anytime.</p>
-    <form
-      class="modal-form"
-      action="https://buttondown.com/api/emails/embed-subscribe/goodthisweek"
-      method="post"
-      target="popupwindow"
-      onsubmit="window.open('https://buttondown.com/goodthisweek', 'popupwindow')"
-    >
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="modal-footer">A free weekly publication</p>
+    
+    <!-- Default state: form -->
+    <div id="modalFormState">
+      <h2 class="modal-title">Good: <em>this week</em></h2>
+      <p class="modal-pitch">Get the next issue Sunday morning. Seven days of reasons to feel a little better. No spam. Unsubscribe anytime.</p>
+      <form
+        class="modal-form"
+        id="subscribeForm"
+      >
+        <input type="email" name="email" id="subscribeEmail" placeholder="your@email.com" required>
+        <button type="submit" id="subscribeButton">Subscribe</button>
+      </form>
+      <p class="modal-footer">A free weekly publication</p>
+    </div>
+
+    <!-- Success state: thank-you message (hidden by default) -->
+    <div id="modalSuccessState" style="display: none;">
+      <h2 class="modal-title">You're <em>almost</em> in.</h2>
+      <p class="modal-pitch">We just sent a confirmation link to your email. Click it, and you'll be on the list for Sunday's issue.</p>
+      <p class="modal-footer" style="margin-top: 32px;">Check your spam folder if you don't see it</p>
+    </div>
+
+    <!-- Error state: try again (hidden by default) -->
+    <div id="modalErrorState" style="display: none;">
+      <h2 class="modal-title">Something <em>went wrong.</em></h2>
+      <p class="modal-pitch" id="modalErrorMessage">We couldn't sign you up just now. Please try again, or email hello@goodthisweek.news.</p>
+      <button class="modal-form" id="tryAgainButton" style="margin-top: 20px; padding: 14px 32px; background: #111; color: #faf9f5; border: none; cursor: pointer; font-family: Georgia, serif; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; font-size: 14px;">Try again</button>
+    </div>
   </div>
 </div>
-
 <script>
   (function() {
     const modal = document.getElementById('subscribeModal');
