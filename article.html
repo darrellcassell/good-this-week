@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The golden eagles are supposed to come back — Good: this week</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #faf9f5;
+    color: #1a1a1a;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sans {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  a { color: inherit; }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    background: #1a1a1a;
+    color: #faf9f5;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+  }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover { color: #FAC775; }
+
+  /* ========== MINI MASTHEAD ========== */
+  .mini-masthead {
+    padding: 24px 40px;
+    border-bottom: 3px solid #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .mini-masthead .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .mini-masthead .logo h1 {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .mini-masthead .logo .sub {
+    font-size: 22px;
+    font-style: italic;
+    color: #D4537E;
+    letter-spacing: -0.01em;
+  }
+  .mini-masthead .back {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #5F5E5A;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  .mini-masthead .back:hover { color: #D4537E; }
+
+  /* ========== ARTICLE HERO ========== */
+  .article-hero {
+    padding: 48px 40px 32px;
+    background: #7F77DD;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .category-tag {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #CECBF6;
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+  .article-hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: #faf9f5;
+    margin-bottom: 20px;
+  }
+  .article-hero .deck {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.4;
+    color: #EEEDFE;
+    max-width: 760px;
+    margin-bottom: 24px;
+  }
+  .byline {
+    display: flex;
+    gap: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #CECBF6;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    flex-wrap: wrap;
+  }
+  .byline b { font-weight: 900; font-style: normal; color: #faf9f5; }
+
+  /* ========== ARTICLE IMAGE PLACEHOLDER ========== */
+  .article-image {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .image-box {
+    background: #3C3489;
+    height: 420px;
+    border-radius: 6px;
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CECBF6;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  .image-caption {
+    font-size: 13px;
+    font-style: italic;
+    color: #5F5E5A;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* ========== ARTICLE BODY ========== */
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+  .article-body p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+  .article-body p.dropcap::first-letter {
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.85;
+    padding: 4px 10px 0 0;
+    color: #D4537E;
+    font-style: italic;
+  }
+  .article-body h2 {
+    font-size: 32px;
+    font-weight: 900;
+    font-style: italic;
+    margin: 40px 0 16px;
+    letter-spacing: -0.01em;
+    color: #1a1a1a;
+  }
+  .article-body blockquote {
+    border-left: 4px solid #7F77DD;
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: #EEEDFE;
+    border-radius: 0 6px 6px 0;
+  }
+  .article-body blockquote p {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4;
+    color: #26215C;
+    margin: 0;
+  }
+  .article-body blockquote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3C3489;
+    font-style: normal;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+
+  /* ========== STATS CALLOUT ========== */
+  .stats-callout {
+    background: #1a1a1a;
+    color: #faf9f5;
+    padding: 32px;
+    border-radius: 6px;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .stats-callout .stat-big {
+    font-size: 48px;
+    font-weight: 900;
+    font-style: italic;
+    color: #AFA9EC;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stats-callout .stat-label {
+    font-size: 13px;
+    color: #D3D1C7;
+    line-height: 1.4;
+  }
+
+  /* ========== RELATED STORIES ========== */
+  .related {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 48px;
+  }
+  .related-header {
+    border-top: 3px solid #1a1a1a;
+    padding-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .related-header h3 {
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+  }
+  .related-header .note {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #5F5E5A;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .related-card {
+    padding: 24px;
+    border-radius: 6px;
+    transition: transform 0.15s ease;
+    cursor: pointer;
+  }
+  .related-card:hover { transform: translateY(-3px); }
+  .rel-1 { background: #378ADD; color: #E6F1FB; }
+  .rel-2 { background: #1D9E75; color: #E1F5EE; }
+  .rel-3 { background: #FAC775; color: #412402; }
+  .related-card .tag {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  .related-card h4 {
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  .rel-1 h4, .rel-2 h4 { color: #faf9f5; }
+  .rel-3 h4 { color: #1a1a1a; }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: #1a1a1a;
+    color: #faf9f5;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .footer .signoff {
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .footer .meta {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #B4B2A9;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+  }
+  .footer-links a { color: #FAC775; text-decoration: none; }
+  .footer-links a:hover { color: #faf9f5; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .topbar { padding: 10px 20px; font-size: 10px; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .mini-masthead { padding: 18px 24px; flex-wrap: wrap; gap: 12px; }
+    .article-hero { padding: 32px 24px 24px; }
+    .article-image { padding: 0 24px; }
+    .image-box { height: 240px; }
+    .article-body { padding: 32px 24px; }
+    .article-body p { font-size: 17px; }
+    .article-body blockquote p { font-size: 19px; }
+    .stats-callout { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+    .stats-callout .stat-big { font-size: 40px; }
+    .related { padding: 0 24px 32px; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span>Issue no. 47</span>
+      <span>Week of April 19, 2026</span>
+      <a href="good-this-week.html">← Back to this week</a>
+    </div>
+
+    <!-- MINI MASTHEAD -->
+    <div class="mini-masthead">
+      <div class="logo">
+        <h1>Good:</h1>
+        <span class="sub">this week</span>
+      </div>
+      <a href="good-this-week.html" class="back">← All stories</a>
+    </div>
+
+    <!-- ARTICLE HERO -->
+    <div class="article-hero">
+      <span class="category-tag">Wildlife &nbsp;·&nbsp; Lead story</span>
+      <h1>The golden eagles are supposed to come back.</h1>
+      <p class="deck">The species disappeared from English skies around 1870. This week, the government put £1 million behind the first serious attempt to bring them back.</p>
+      <div class="byline">
+        <span><b>Northumberland, UK</b></span>
+        <span>·</span>
+        <span>By <b>Darrell C.</b></span>
+        <span>·</span>
+        <span>6 min read</span>
+        <span>·</span>
+        <span>April 19, 2026</span>
+      </div>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="article-image">
+      <div class="image-box">— Photograph would go here —<br>A golden eagle mid-flight, wings flared, against a grey Highland sky</div>
+      <p class="image-caption">Golden eagles show up in Shakespeare more than forty times. They don't show up in modern English skies at all.</p>
+    </div>
+
+    <!-- ARTICLE BODY -->
+    <article class="article-body">
+
+      <p class="dropcap">The last golden eagles in England were mostly shot. Some were poisoned. A few were clubbed off their nests by farmers who thought the birds were killing lambs, which they occasionally were, but not at the rate the farmers believed. The Victorians had a broad, uncomplicated hatred of large birds, and by the 1870s the eagles were gone.</p>
+
+      <p>That's the short version. There have been a couple of stragglers since — most famously a lone male in the Lake District who held on until 2015, calling for a mate that never came — but as a breeding species in England, the golden eagle has been absent for about a century and a half.</p>
+
+      <p>This week, Forestry England published a feasibility study that says, more or less, we might be ready to try again.</p>
+
+      <h2>What the report actually says</h2>
+
+      <p>The government has put £1 million behind the next phase of work, and researchers have identified eight potential recovery zones, mostly across northern England, where the habitat could plausibly support breeding pairs. The study is not a plan to release birds tomorrow. It's the official determination that a plan is worth developing: what food the eagles would need, which landowners would have to be on board, how many birds to release, and from where.</p>
+
+      <p>Anyone who has watched a UK planning process unfold knows that "feasibility study" can mean anything from "we're doing this" to "we're pretending to consider this so the funders will leave us alone." This one feels closer to the first. Scotland's Borders reintroduction, which began in 2018, has been a quiet success — there are now more breeding pairs in the south of Scotland than at any point in living memory. England is essentially being handed a working template.</p>
+
+      <blockquote>
+        <p>Conditions for their return may finally be in place.</p>
+        <cite>— Forestry England feasibility report</cite>
+      </blockquote>
+
+      <p>That sentence, with its very British "may" and "finally," is the kind of phrasing that does a lot of work while pretending to do very little. But the caution is earned. Several things had to be true before this could even be on the table: habitat had to recover in key areas, a generation of pesticides had to cycle out of the food chain, and rural attitudes toward large raptors had to soften from "shoot on sight" to something more tolerant. All three have mostly happened.</p>
+
+      <h2>A bird the size of a toddler</h2>
+
+      <p>A few things worth knowing about the species. Golden eagles have a wingspan of roughly seven feet and can weigh up to fifteen pounds. They hunt rabbits, hares, grouse, and the occasional fox. They're also intensely territorial — a breeding pair will hold a hunting range of around fifty square kilometres, and they will not share it. This is part of what makes a reintroduction technically difficult. You cannot simply release a lot of eagles into one place and hope it works. The landscape has to be spacious enough to let them spread out.</p>
+
+      <p>They also live a long time. Twenty to thirty years in the wild, under good conditions. That means the first birds released in the 2030s, if the program survives that long, could still be flying over Northumberland in the 2060s.</p>
+
+      <div class="stats-callout">
+        <div>
+          <div class="stat-big">150</div>
+          <div class="stat-label">Years since a breeding population of golden eagles existed in England</div>
+        </div>
+        <div>
+          <div class="stat-big">8</div>
+          <div class="stat-label">Recovery zones identified in the feasibility study, mostly in the north</div>
+        </div>
+        <div>
+          <div class="stat-big">40+</div>
+          <div class="stat-label">Times golden eagles are referenced in Shakespeare's plays</div>
+        </div>
+      </div>
+
+      <h2>What it would mean, honestly</h2>
+
+      <p>I grew up hearing stories about American bald eagles coming back from the brink. My dad used to tell me about the first one he saw in the wild, at a reservoir in Pennsylvania in the late 1990s. He pulled the car over on the shoulder, and he was embarrassed, afterward, by how much it had affected him. I was young enough that I didn't fully understand why until later. It's a specific feeling, watching a thing you'd been told was gone turn out to be standing in a tree.</p>
+
+      <p>Reintroducing a species is not a clean process. Some of the eagles will die, particularly in the first few years. Farmers will have opinions, some of them loud. There will be disputes over access rights, compensation schemes, and whether the money could have been better spent on more immediate conservation priorities. A number of birds will almost certainly be shot illegally, because some people are like that and always have been. Funding can be pulled. Governments change. The whole project could stall for a decade or collapse entirely.</p>
+
+      <p>But there's also a real scenario — maybe ten years out, maybe fifteen — in which a school group somewhere in Northumberland looks up and sees one. A kid asks what it is. A teacher tells them. And a thing that was impossible for their great-great-grandparents becomes, for that kid, just another bird in the sky on a Tuesday.</p>
+
+      <p>Which is probably worth a million pounds.</p>
+
+      <p style="font-style: italic; color: #5F5E5A; text-align: center; border-top: 1px solid #D3D1C7; padding-top: 24px; margin-top: 40px;">Got a good story? <a href="good-this-week.html#submit" style="color: #D4537E; font-weight: 500;">Send it to us →</a></p>
+
+    </article>
+
+    <!-- RELATED STORIES -->
+    <div class="related">
+      <div class="related-header">
+        <h3>More good from this week</h3>
+        <span class="note">You might also like</span>
+      </div>
+      <div class="related-grid">
+        <div class="related-card rel-1">
+          <div class="tag" style="color: #B5D4F4;">Science</div>
+          <h4>Two or three cups of coffee linked to better mental health in 460,000 people.</h4>
+        </div>
+        <div class="related-card rel-2">
+          <div class="tag" style="color: #9FE1CB;">Health</div>
+          <h4>New AI tool predicts which bowel cancer patients will benefit from tough chemo drug.</h4>
+        </div>
+        <div class="related-card rel-3">
+          <div class="tag" style="color: #712B13;">Kindness</div>
+          <h4>England is scrapping daily sugary snacks from school lunches for the first time in a decade.</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p class="signoff">See you next Sunday.</p>
+      <p class="meta">Good: this week &nbsp;·&nbsp; A publication about what's going right</p>
+      <div class="footer-links">
+        <a href="good-this-week.html">Home</a>
+        <a href="good-this-week.html#submit">Submit</a>
+        <a href="good-this-week.html">Archive</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
