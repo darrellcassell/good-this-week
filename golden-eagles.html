@@ -7,10 +7,10 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- Open Graph / Social sharing -->
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://goodthisweek.news/article.html">
+<meta property="og:url" content="https://goodthisweek.news/golden-eagles.html">
 <meta property="og:title" content="England is trying to bring back golden eagles after 150 years away.">
 <meta property="og:description" content="The Victorians hunted them out of existence by the 1870s. A new £1m feasibility study has mapped eight places where they could plausibly come home.">
-<meta property="og:image" content="https://goodthisweek.news/images/og-eagles.png">
+<meta property="og:image" content="https://goodthisweek.news/images/og-home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Good: this week">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="England is trying to bring back golden eagles after 150 years away.">
 <meta name="twitter:description" content="The Victorians hunted them out of existence by the 1870s. A new £1m feasibility study has mapped eight places where they could plausibly come home.">
-<meta name="twitter:image" content="https://goodthisweek.news/images/og-eagles.png">
+<meta name="twitter:image" content="https://goodthisweek.news/images/og-home.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -291,11 +291,10 @@
     border-radius: 6px;
     transition: transform 0.15s ease;
     cursor: pointer;
+    text-decoration: none;
+    display: block;
   }
   .related-card:hover { transform: translateY(-3px); }
-  .rel-1 { background: #378ADD; color: #E6F1FB; }
-  .rel-2 { background: #1D9E75; color: #E1F5EE; }
-  .rel-3 { background: #FAC775; color: #412402; }
   .related-card .tag {
     font-size: 11px;
     letter-spacing: 0.25em;
@@ -308,9 +307,8 @@
     font-size: 19px;
     font-weight: 900;
     line-height: 1.2;
+    color: #faf9f5;
   }
-  .rel-1 h4, .rel-2 h4 { color: #faf9f5; }
-  .rel-3 h4 { color: #1a1a1a; }
 
   /* ========== FOOTER ========== */
   .footer {
@@ -361,207 +359,115 @@
     .related { padding: 0 24px 32px; }
     .related-grid { grid-template-columns: 1fr; }
   }
+
   /* ========== END-OF-ARTICLE SUBSCRIBE CTA ========== */
-.article-subscribe {
-  background: #faf9f5;
-  border: 1px solid #D3D1C7;
-  border-left: 4px solid #D4537E;
-  padding: 40px 36px;
-  margin: 56px 0;
-  text-align: center;
-  font-family: Georgia, serif;
-}
-
-.article-subscribe .eyebrow {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #5F5E5A;
-  margin: 0 0 12px 0;
-  font-style: italic;
-}
-
-.article-subscribe h3 {
-  font-family: Georgia, serif;
-  font-size: 28px;
-  font-weight: bold;
-  color: #111;
-  margin: 0 0 12px 0;
-  line-height: 1.25;
-}
-
-.article-subscribe h3 em {
-  color: #D4537E;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.article-subscribe .pitch {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #5F5E5A;
-  margin: 0 auto 24px auto;
-  max-width: 420px;
-}
-
-.article-subscribe .cta-button {
-  display: inline-block;
-  font-family: Georgia, serif;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 14px 32px;
-  background: #111;
-  color: #faf9f5;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-.article-subscribe .cta-button:hover {
-  background: #D4537E;
-}
-
-@media (max-width: 600px) {
   .article-subscribe {
-    padding: 32px 24px;
-    margin: 40px 0;
+    background: #faf9f5;
+    border: 1px solid #D3D1C7;
+    border-left: 4px solid #D4537E;
+    padding: 40px 36px;
+    margin: 56px 0;
+    text-align: center;
+    font-family: Georgia, serif;
+  }
+  .article-subscribe .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5F5E5A;
+    margin: 0 0 12px 0;
+    font-style: italic;
   }
   .article-subscribe h3 {
-    font-size: 22px;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #111;
+    margin: 0 0 12px 0;
+    line-height: 1.25;
   }
-}
-/* ========== SUBSCRIBE MODAL ========== */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(20, 20, 20, 0.65);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
+  .article-subscribe h3 em {
+    color: #D4537E;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .article-subscribe .pitch {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #5F5E5A;
+    margin: 0 auto 24px auto;
+    max-width: 420px;
+  }
+  .article-subscribe .cta-button {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 14px 32px;
+    background: #111;
+    color: #faf9f5;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  .article-subscribe .cta-button:hover { background: #D4537E; }
 
-.modal-overlay.active {
-  display: flex;
-}
+  @media (max-width: 600px) {
+    .article-subscribe { padding: 32px 24px; margin: 40px 0; }
+    .article-subscribe h3 { font-size: 22px; }
+  }
 
-.modal-content {
-  background: #faf9f5;
-  max-width: 480px;
-  width: 100%;
-  padding: 48px 40px;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  font-family: Georgia, serif;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.modal-close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  color: #666;
-  font-family: Georgia, serif;
-  padding: 4px 8px;
-}
-
-.modal-close:hover {
-  color: #000;
-}
-
-.modal-title {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 0 0 4px 0;
-  color: #111;
-}
-
-.modal-title em {
-  color: #c64a78;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.modal-pitch {
-  font-family: Georgia, serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #555;
-  margin: 16px 0 28px 0;
-}
-
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.modal-form input[type="email"] {
-  font-family: Georgia, serif;
-  font-size: 16px;
-  padding: 14px 16px;
-  border: 1px solid #ccc;
-  background: #fff;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 0;
-}
-
-.modal-form input[type="email"]:focus {
-  outline: none;
-  border-color: #111;
-}
-
-.modal-form button {
-  font-family: Georgia, serif;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 14px 16px;
-  background: #111;
-  color: #faf9f5;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 0;
-}
-
-.modal-form button:hover {
-  background: #c64a78;
-}
-
-.modal-footer {
-  font-family: Georgia, serif;
-  font-size: 12px;
-  color: #888;
-  letter-spacing: 0.5px;
-  margin-top: 20px;
-  text-transform: uppercase;
-}
-
-@media (max-width: 480px) {
+  /* ========== SUBSCRIBE MODAL ========== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(20, 20, 20, 0.65);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .modal-overlay.active { display: flex; }
   .modal-content {
-    padding: 36px 24px;
+    background: #faf9f5;
+    max-width: 480px;
+    width: 100%;
+    padding: 48px 40px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    font-family: Georgia, serif;
+    text-align: center;
+    box-sizing: border-box;
   }
-  .modal-title {
-    font-size: 26px;
+  .modal-close {
+    position: absolute;
+    top: 14px; right: 18px;
+    background: none; border: none;
+    font-size: 28px; line-height: 1;
+    cursor: pointer; color: #666;
+    font-family: Georgia, serif;
+    padding: 4px 8px;
   }
-}
+  .modal-close:hover { color: #000; }
+  .modal-title { font-family: Georgia, serif; font-size: 32px; font-weight: bold; margin: 0 0 4px 0; color: #111; }
+  .modal-title em { color: #c64a78; font-style: italic; font-weight: normal; }
+  .modal-pitch { font-family: Georgia, serif; font-size: 15px; line-height: 1.5; color: #555; margin: 16px 0 28px 0; }
+  .modal-form { display: flex; flex-direction: column; gap: 12px; }
+  .modal-form input[type="email"] { font-family: Georgia, serif; font-size: 16px; padding: 14px 16px; border: 1px solid #ccc; background: #fff; width: 100%; box-sizing: border-box; border-radius: 0; }
+  .modal-form input[type="email"]:focus { outline: none; border-color: #111; }
+  .modal-form button { font-family: Georgia, serif; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 16px; background: #111; color: #faf9f5; border: none; cursor: pointer; font-weight: bold; border-radius: 0; }
+  .modal-form button:hover { background: #c64a78; }
+  .modal-footer { font-family: Georgia, serif; font-size: 12px; color: #888; letter-spacing: 0.5px; margin-top: 20px; text-transform: uppercase; }
+  @media (max-width: 480px) {
+    .modal-content { padding: 36px 24px; }
+    .modal-title { font-size: 26px; }
+  }
 </style>
 </head>
 <body>
@@ -570,13 +476,13 @@
 
     <!-- TOP BAR -->
     <div class="topbar">
-      <span>Issue no. 47</span>
+      <span>Issue no. 1</span>
       <span>Week of April 19, 2026</span>
       <a href="/">← Back to this week</a>
     </div>
 
     <!-- MINI MASTHEAD -->
-    <a href="/">← Back to this week</a>
+    <div class="mini-masthead">
       <div class="logo">
         <h1>Good:</h1>
         <span class="sub">this week</span>
@@ -659,7 +565,9 @@
 
       <p>Which is probably worth a million pounds.</p>
 
-      <p style="font-style: italic; color: #5F5E5A; text-align: center; border-top: 1px solid #D3D1C7; padding-top: 24px; margin-top: 40px;">Got a good story? <a href="/#submit" style="color: #D4537E; font-weight: 500;">Send it to us →</a></p>
+      <p style="font-size: 14px; font-style: italic; color: #5F5E5A; border-top: 1px solid #D3D1C7; padding-top: 18px; margin-top: 40px;"><strong>Source:</strong> Forestry England feasibility study, April 2026; BBC News; The Guardian.</p>
+
+      <p style="font-style: italic; color: #5F5E5A; text-align: center; border-top: 1px solid #D3D1C7; padding-top: 24px; margin-top: 24px;">Got a good story? <a href="/#submit" style="color: #D4537E; font-weight: 500;">Send it to us →</a></p>
 
     </article>
 
@@ -678,18 +586,18 @@
         <span class="note">You might also like</span>
       </div>
       <div class="related-grid">
-        <div class="related-card rel-1">
+        <a href="/coffee-mental-health.html" class="related-card" style="background: #378ADD;">
           <div class="tag" style="color: #B5D4F4;">Science</div>
           <h4>Two or three cups of coffee linked to better mental health in 460,000 people.</h4>
-        </div>
-        <div class="related-card rel-2">
+        </a>
+        <a href="/ai-bowel-cancer.html" class="related-card" style="background: #1D9E75;">
           <div class="tag" style="color: #9FE1CB;">Health</div>
           <h4>New AI tool predicts which bowel cancer patients will benefit from tough chemo drug.</h4>
-        </div>
-        <div class="related-card rel-3">
-          <div class="tag" style="color: #712B13;">Kindness</div>
+        </a>
+        <a href="/school-lunch-standards.html" class="related-card" style="background: #D4537E;">
+          <div class="tag" style="color: #FBBFD0;">Kindness</div>
           <h4>England is scrapping daily sugary snacks from school lunches for the first time in a decade.</h4>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -706,33 +614,25 @@
     </div>
 
   </div>
+
 <!-- Subscribe Modal -->
 <div class="modal-overlay" id="subscribeModal">
   <div class="modal-content">
     <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    
-    <!-- Default state: form -->
     <div id="modalFormState">
       <h2 class="modal-title">Good: <em>this week</em></h2>
       <p class="modal-pitch">Get the next issue Sunday morning. Seven days of reasons to feel a little better. No spam. Unsubscribe anytime.</p>
-      <form
-        class="modal-form"
-        id="subscribeForm"
-      >
+      <form class="modal-form" id="subscribeForm">
         <input type="email" name="email" id="subscribeEmail" placeholder="your@email.com" required>
         <button type="submit" id="subscribeButton">Subscribe</button>
       </form>
       <p class="modal-footer">A free weekly publication</p>
     </div>
-
-    <!-- Success state: thank-you message (hidden by default) -->
     <div id="modalSuccessState" style="display: none;">
       <h2 class="modal-title">You're <em>almost</em> in.</h2>
       <p class="modal-pitch">We just sent a confirmation link to your email. Click it, and you'll be on the list for Sunday's issue.</p>
       <p class="modal-footer" style="margin-top: 32px;">Check your spam folder if you don't see it</p>
     </div>
-
-    <!-- Error state: try again (hidden by default) -->
     <div id="modalErrorState" style="display: none;">
       <h2 class="modal-title">Something <em>went wrong.</em></h2>
       <p class="modal-pitch" id="modalErrorMessage">We couldn't sign you up just now. Please try again, or email hello@goodthisweek.news.</p>
@@ -759,29 +659,22 @@
       document.body.style.overflow = 'hidden';
       resetModal();
     }
-
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
-
     function resetModal() {
       formState.style.display = 'block';
       successState.style.display = 'none';
       errorState.style.display = 'none';
       if (emailInput) emailInput.value = '';
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Subscribe';
-      }
+      if (submitButton) { submitButton.disabled = false; submitButton.textContent = 'Subscribe'; }
     }
-
     function showSuccess() {
       formState.style.display = 'none';
       successState.style.display = 'block';
       errorState.style.display = 'none';
     }
-
     function showError() {
       formState.style.display = 'none';
       successState.style.display = 'none';
@@ -794,43 +687,23 @@
         openModal();
       });
     });
-
     closeBtn.addEventListener('click', closeModal);
-
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
-
-    if (tryAgainButton) {
-      tryAgainButton.addEventListener('click', resetModal);
-    }
-
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+    if (tryAgainButton) tryAgainButton.addEventListener('click', resetModal);
     if (form) {
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
         const email = emailInput.value.trim();
         if (!email) return;
-
         submitButton.disabled = true;
         submitButton.textContent = 'Subscribing...';
-
         try {
           const formData = new FormData();
           formData.append('email', email);
-
-          const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/goodthisweek', {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors'
+          await fetch('https://buttondown.com/api/emails/embed-subscribe/goodthisweek', {
+            method: 'POST', body: formData, mode: 'no-cors'
           });
-
-          // With mode: 'no-cors', we can't read the response, but if no error was thrown, the request went through
           showSuccess();
         } catch (err) {
           console.error('Subscribe error:', err);
