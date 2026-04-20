@@ -257,6 +257,31 @@ Write a 600–900 word feature in the style of my existing golden eagles article
 Return the full HTML for the new article page, using my existing article.html as the template.
 ```
 
+### For weekly Instagram generation
+
+```
+I need to generate this week's Instagram content for Good: this week. Follow docs/instagram-guide.md exactly — don't invent new tile types, colors, or formats.
+
+Here's this week's issue content:
+
+[PASTE ISSUE JSON OR STORY LIST WITH HEADLINES, KEY NUMBERS, QUOTES, CATEGORIES]
+
+Produce, in this order:
+
+1. A carousel plan (6–8 slides). For each slide: which story, which tile type, which category color, one-line reason. Apply the warm/cool alternation rule. Lead = slide 1, shorts roundup = second-to-last, CTA = last.
+2. The carousel caption (Template A, B, or C from Part eight). Under 700 characters. First line works above the "... more" cutoff.
+3. All carousel tiles as self-contained HTML at 1080×1080.
+4. Six daily story tiles (1080×1920) for Mon–Sat, each with "Story N of 6" tag.
+5. The Sunday masthead announcement story (1080×1920, black).
+6. A one-paragraph summary of the week's set.
+
+Voice rules from docs/style-guide.md apply to all tile copy and captions. No "it's not just X, it's Y," no em-dashes as rhythm, no "palpable," no thesaurus words. End one beat early.
+
+Push back if any story doesn't have a strong enough hook for Instagram. Better 5 great tiles than 8 okay ones.
+
+I'm a beginner with code. Walk me through anything I need to do on my end.
+```
+
 ---
 
 ## Context for every future chat
@@ -287,7 +312,8 @@ KNOWN FILES:
 - about.html (about page, letter-style)
 - [slug].html files for each article (golden-eagles.html, coffee-mental-health.html, etc.)
 - notes.md (running project log)
-- docs/style-guide.md (house voice and rules)
+- docs/style-guide.md (house voice and rules for writing)
+- docs/instagram-guide.md (visual system, posting rhythm, tile specs, captions)
 - docs/launch-plan.md (this document)
 
 I'M A BEGINNER WITH CODE. Walk me through every step literally, no assumed knowledge.
