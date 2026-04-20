@@ -30,6 +30,7 @@
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   .sans {
@@ -684,11 +685,12 @@
 
   /* ========== RESPONSIVE (mobile) ========== */
   @media (max-width: 768px) {
-    .legend-grid { grid-template-columns: repeat(4, 1fr); }
+    .legend-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .content { padding: 24px; }
     .two-col, .split, .archive-grid { grid-template-columns: 1fr; }
     .three-col { grid-template-columns: 1fr; }
-    .numbers-grid { grid-template-columns: 1fr 1fr; }
+    .numbers-section { padding: 32px 24px; }
+    .numbers-grid { grid-template-columns: 1fr; gap: 32px; }
     .shorts-grid { grid-template-columns: 1fr; }
     .pullquote { grid-template-columns: 1fr; padding: 24px; }
     .pullquote .mark { font-size: 80px; }
