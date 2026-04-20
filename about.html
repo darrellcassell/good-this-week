@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Good: this week</title>
+<meta name="description" content="Hi, I'm Darrell. I started Good: this week because I was tired of how the news made me feel.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — Good: this week">
+<meta property="og:description" content="Hi, I'm Darrell. I started Good: this week because I was tired of how the news made me feel.">
+<meta property="og:image" content="https://goodthisweek.news/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://goodthisweek.news/about.html">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #faf9f5;
+    color: #1a1a1a;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sans {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  a { color: inherit; }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    background: #1a1a1a;
+    color: #faf9f5;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+  }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover { color: #FAC775; }
+
+  /* ========== MINI MASTHEAD ========== */
+  .mini-masthead {
+    padding: 24px 40px;
+    border-bottom: 3px solid #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .mini-masthead .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .mini-masthead .logo h1 {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .mini-masthead .logo .sub {
+    font-size: 22px;
+    font-style: italic;
+    color: #D4537E;
+    letter-spacing: -0.01em;
+  }
+  .mini-masthead .back {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #5F5E5A;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  .mini-masthead .back:hover { color: #D4537E; }
+
+  /* ========== PAGE HEADER ========== */
+  .page-header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 40px 16px;
+  }
+  .page-header .kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #D4537E;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin-bottom: 12px;
+  }
+  .page-header h1 {
+    font-size: clamp(48px, 6vw, 84px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: #1a1a1a;
+  }
+
+  /* ========== LETTER BODY ========== */
+  .letter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 40px 48px;
+  }
+  .letter p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+  .letter p.greeting {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+  .letter p.dropcap::first-letter {
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.85;
+    padding: 4px 10px 0 0;
+    color: #D4537E;
+    font-style: italic;
+  }
+  .letter a {
+    color: #D4537E;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .letter a:hover {
+    text-decoration-thickness: 2px;
+  }
+  .letter .signoff {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 22px;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: #1a1a1a;
+    color: #faf9f5;
+    padding: 48px 40px;
+    text-align: center;
+    margin-top: 48px;
+  }
+  .footer .signoff-footer {
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .footer .meta {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #B4B2A9;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+  }
+  .footer-links a { color: #FAC775; text-decoration: none; }
+  .footer-links a:hover { color: #faf9f5; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .topbar { padding: 10px 20px; font-size: 10px; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .mini-masthead { padding: 18px 24px; flex-wrap: wrap; gap: 12px; }
+    .page-header { padding: 48px 24px 12px; }
+    .letter { padding: 16px 24px 32px; }
+    .letter p { font-size: 18px; }
+    .letter p.greeting { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span>Good: this week</span>
+      <span>A publication about what's going right</span>
+      <a href="/">← Back to home</a>
+    </div>
+
+    <!-- MINI MASTHEAD -->
+    <div class="mini-masthead">
+      <a href="/" style="text-decoration: none;">
+        <div class="logo">
+          <h1>Good:</h1>
+          <span class="sub">this week</span>
+        </div>
+      </a>
+      <a href="/" class="back">← All stories</a>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="kicker">About</div>
+      <h1>Hi, I'm Darrell.</h1>
+    </div>
+
+    <!-- LETTER BODY -->
+    <article class="letter">
+
+      <p class="dropcap">I started Good: this week in 2026, mostly because I was tired of the way the news made me feel. Not the news itself — a lot of what's happening in the world is genuinely bad, and pretending otherwise doesn't help anyone. But the experience of reading the news had turned into something negative, especially as I got older. I'd close the tab feeling worse than when I opened it, and nothing in my life had actually changed.</p>
+
+      <p>Good things were happening too, though. They just didn't travel. A village adopts a bunch of stray dogs and it trends for a day. A country quietly cuts its road deaths by 7% and nobody hears about it. A new cancer test gets approved and it's on page 14. The good news was out there, it just wasn't organized.</p>
+
+      <p>So this publication is an experiment in organizing it. One issue a week, every Sunday, built from stories I found during the previous seven days. I try to write about them the way I would tell a friend: specific, a little dry, honest about what's going wrong as well as what's going right.</p>
+
+      <p>I'm a wedding photographer in Asheville, North Carolina by day. This is a side project for now, but I intend to keep doing it for a long time.</p>
+
+      <p>If you have a good story to share, send it through <a href="/#submit">the submission form</a> or email me at <a href="mailto:hello@goodthisweek.news">hello@goodthisweek.news</a>. I read every one.</p>
+
+      <p class="signoff">Thanks for being here.</p>
+
+      <p class="signoff" style="margin-top: 0;">— Darrell</p>
+
+    </article>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p class="signoff-footer">See you next Sunday.</p>
+      <p class="meta">Good: this week &nbsp;·&nbsp; A publication about what's going right</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#submit">Submit</a>
+        <a href="/#archive">Archive</a>
+        <a href="https://instagram.com/goodthisweek" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
