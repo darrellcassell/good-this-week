@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartwarming — Good: this week</title>
+<title>Wild pollinators boost farmers' incomes and nutrition — Good: this week</title>
 <link rel="icon" type="image/png" href="/favicon.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://goodthisweek.news/heartwarming.html">
-<meta property="og:title" content="Heartwarming — Good: this week">
-<meta property="og:description" content="The stories that are just plain good.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://goodthisweek.news/pollinators-income.html">
+<meta property="og:title" content="Wild pollinators boost farmers' incomes and nutrition — and a new study finally puts real numbers on exactly how much.">
+<meta property="og:description" content="Researchers tracked smallholder farms in India and found that bees and insects delivered gains that chemical alternatives simply can't replicate.">
 <meta property="og:image" content="https://goodthisweek.news/images/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Good: this week">
+<meta property="article:section" content="Community">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wild pollinators boost farmers' incomes and nutrition — and a new study finally puts real numbers on exactly how much.">
+<meta name="twitter:description" content="Researchers tracked smallholder farms in India and found that bees and insects delivered gains that chemical alternatives simply can't replicate.">
+<meta name="twitter:image" content="https://goodthisweek.news/images/og-home.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #faf9f5; color: #1a1a1a; font-family: Georgia, 'Times New Roman', serif; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -24,25 +32,49 @@
   .topbar .tb-center em { color: #D4537E; font-style: italic; font-weight: 400; letter-spacing: 0.15em; }
   .topbar .tb-right { justify-self: end; }
 
-  .hero { background: #FAC775; color: #412402; padding: 80px 40px 72px; text-align: center; }
+  .hero { background: #D85A30; color: #faf9f5; padding: 64px 40px 56px; }
   .hero-inner { max-width: 900px; margin: 0 auto; }
-  .hero h1 { font-size: clamp(48px, 7vw, 88px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin-bottom: 22px; color: #412402; }
-  .hero .tagline { font-size: clamp(18px, 2.2vw, 22px); font-style: italic; color: #6B4014; line-height: 1.5; margin-bottom: 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
-  .hero .meta { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #8C5520; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .hero .category { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #faf9f5; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; margin-bottom: 18px; }
+  .hero .meta { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #F5C4B3; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; margin-bottom: 28px; }
+  .hero h1 { font-size: clamp(36px, 5.5vw, 64px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 20px; color: #faf9f5; }
+  .hero .deck { font-size: clamp(18px, 2vw, 22px); font-style: italic; color: #FAECE7; line-height: 1.4; margin-bottom: 28px; max-width: 760px; }
+  .hero .dateline { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #F5C4B3; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .hero .dateline::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
-  .empty-state { max-width: 720px; margin: 0 auto; padding: 96px 40px; text-align: center; }
-  .empty-state p { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 19px; color: #5F5E5A; line-height: 1.5; }
+  .story { max-width: 720px; margin: 0 auto; padding: 40px; }
+  .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #5F5E5A; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; margin-bottom: 20px; margin-top: 8px; }
 
-  .stories { max-width: 1100px; margin: 0 auto; padding: 56px 40px 40px; }
-  .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #5F5E5A; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; margin-bottom: 20px; }
-  .story-card { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 28px 0; border-bottom: 2px solid #1a1a1a; }
-  .story-card:first-of-type { border-top: 2px solid #1a1a1a; }
-  .story-card-left { flex: 1; min-width: 0; }
-  .story-meta { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #5F5E5A; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; margin-bottom: 12px; }
-  .story-card h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 900; font-size: clamp(20px, 2.5vw, 28px); line-height: 1.15; letter-spacing: -0.01em; color: #1a1a1a; margin-bottom: 10px; }
-  .story-card .story-deck { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 15px; line-height: 1.5; color: #5F5E5A; }
-  .read-btn { flex-shrink: 0; border: 2px solid #1a1a1a; padding: 10px 20px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1a1a1a; background: transparent; transition: background 0.15s ease, color 0.15s ease; }
-  .story-card:hover .read-btn { background: #1a1a1a; color: #faf9f5; }
+  .bullets { list-style: none; margin-bottom: 16px; }
+  .bullets li { position: relative; padding: 14px 0 14px 28px; border-bottom: 1px solid #e0dcd5; font-size: 16px; line-height: 1.75; color: #1a1a1a; }
+  .bullets li:last-child { border-bottom: none; }
+  .bullets li::before { content: ''; position: absolute; left: 0; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: #D85A30; }
+  .bullets li strong { font-weight: 900; color: #1a1a1a; }
+
+  .pullquote { background: #1a1a1a; color: #faf9f5; border-radius: 6px; padding: 32px 40px; margin: 32px 0; }
+  .pullquote .mark { font-family: Georgia, 'Times New Roman', serif; font-size: 56px; font-style: italic; line-height: 1; color: #FAC775; margin-bottom: 4px; }
+  .pullquote .quote { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-style: italic; line-height: 1.65; color: #faf9f5; margin-bottom: 18px; }
+  .pullquote .attr { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #888; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+
+  .sources { margin-bottom: 16px; }
+  .source-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #e0dcd5; gap: 20px; }
+  .source-row:last-child { border-bottom: none; }
+  .source-info .source-outlet { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 900; color: #1a1a1a; line-height: 1.3; }
+  .source-info .source-author { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-style: italic; color: #5F5E5A; margin-top: 2px; }
+  .source-btn { flex-shrink: 0; border: 2px solid #1a1a1a; padding: 8px 18px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1a1a1a; background: transparent; transition: background 0.15s ease, color 0.15s ease; }
+  .source-btn:hover { background: #1a1a1a; color: #faf9f5; }
+
+  .more-section { background: #faf9f5; padding: 40px; border-top: 1px solid #e0dcd5; }
+  .more-section-inner { max-width: 1100px; margin: 0 auto; }
+  .feature-card { padding: 28px; border-radius: 6px; background: #D85A30; color: #FAECE7; display: block; }
+  .feature-card h3 { font-size: clamp(22px, 2.5vw, 28px); font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; color: #faf9f5; }
+
+  .related-section { background: #faf9f5; padding: 8px 40px 40px; }
+  .related-section-inner { max-width: 1100px; margin: 0 auto; }
+  .three-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .mini-card { background: #faf9f5; border: 2px solid #1a1a1a; border-radius: 6px; padding: 22px; transition: transform 0.15s ease; display: block; }
+  .mini-card:hover { transform: translateY(-3px); }
+  .mini-card .tag { display: inline-block; color: #faf9f5; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 10px; margin-bottom: 12px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mini-card h4 { font-size: 19px; font-weight: 900; line-height: 1.2; color: #1a1a1a; }
 
   .subscribe-section { background: #F4C0D1; border-radius: 6px; padding: 48px 40px; margin: 40px; text-align: center; }
   .subscribe-section-inner { max-width: 1100px; margin: 0 auto; }
@@ -62,13 +94,17 @@
 
   @media (max-width: 768px) {
     .topbar { padding: 10px 16px; font-size: 10px; gap: 8px; }
-    .hero { padding: 64px 24px 56px; }
-    .empty-state { padding: 64px 24px; }
-    .stories { padding: 40px 24px 24px; }
-    .story-card { flex-direction: column; align-items: flex-start; gap: 16px; }
-    .read-btn { align-self: flex-start; }
+    .hero { padding: 48px 24px 40px; }
+    .story { padding: 32px 24px; }
+    .pullquote { padding: 24px; }
+    .pullquote .mark { font-size: 44px; }
+    .pullquote .quote { font-size: 17px; }
+    .more-section, .related-section { padding: 32px 24px; }
+    .related-section { padding-top: 0; }
+    .three-col { grid-template-columns: 1fr; }
     .subscribe-section { margin: 24px; padding: 36px 24px; }
     .subscribe-section h3 { font-size: 32px; }
+    .source-row { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 20, 20, 0.65); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
@@ -91,29 +127,78 @@
 <body>
 
   <div class="topbar">
-    <a href="/index.html" class="tb-left">← Home</a>
+    <a href="/index.html" class="tb-left">← All stories</a>
     <a href="/index.html" class="tb-center">Good: <em>this week</em></a>
     <a href="#" class="tb-right" data-subscribe>Subscribe →</a>
   </div>
 
   <div class="hero">
     <div class="hero-inner">
-      <h1>Heartwarming</h1>
-      <p class="tagline">The stories that are just plain good.</p>
-      <p class="meta">All stories · goodthisweek.news</p>
+      <div class="category">Community</div>
+      <div class="meta">Issue no. 2 · May 8, 2026 · 1 source</div>
+      <h1>Wild pollinators boost farmers' incomes and nutrition — and a new study finally puts real numbers on exactly how much.</h1>
+      <p class="deck">Researchers tracked smallholder farms in India and found that bees and insects delivered gains that chemical alternatives simply can't replicate.</p>
+      <span class="dateline">York, England / Karnataka, India</span>
     </div>
   </div>
 
-  <div class="stories">
-    <div class="section-label">All stories</div>
-    <a href="/prom-promise.html" class="story-card">
-      <div class="story-card-left">
-        <div class="story-meta">Issue no. 2 · May 8, 2026</div>
-        <h3>A Wisconsin teenager kept a 14-year promise and took his Icelandic grandmother to prom.</h3>
-        <p class="story-deck">Avant Williams made the vow as a toddler. This spring, he delivered — and gave his grandmother the night she'd watched on American TV for decades.</p>
+  <div class="story">
+
+    <div class="section-label">The story</div>
+    <ul class="bullets">
+      <li>A study led by ecologist <strong>Thomas Timberlake</strong> at the <strong>University of York</strong> tracked smallholder farms in southwest India to quantify what wild pollinators actually contribute to farmers' livelihoods and nutritional outcomes.</li>
+      <li>The research found that farms with healthy wild pollinator populations produced <strong>measurably higher yields</strong> of key crops, with income benefits significant enough to affect household food security.</li>
+      <li>Critically, the <strong>nutritional quality</strong> of crops — not just quantity — improved in fields with greater pollinator diversity, because pollinators support fruits and vegetables that are disproportionately important to diet quality.</li>
+      <li>Wild pollinators like bumblebees, solitary bees, and hoverflies provided services that <strong>cannot simply be replaced</strong> by managed honeybee hives or chemical interventions.</li>
+      <li>The research puts <strong>specific economic figures</strong> on what a healthy ecosystem does for a family farm — moving conservation out of the abstract and into the language of livelihoods.</li>
+      <li>The findings make a strong economic case for protecting <strong>hedgerows, wildflower margins, and natural habitats</strong> around farms — investments that pay back in yields, not just biodiversity.</li>
+    </ul>
+
+    <div class="pullquote">
+      <div class="mark">"</div>
+      <p class="quote">Nature clearly benefits human health — but moving beyond these generalities to specifics is hard.</p>
+      <p class="attr">— Thomas Timberlake, University of York ecologist, via NPR</p>
+    </div>
+
+    <div class="section-label">Sources</div>
+    <div class="sources">
+      <a href="https://www.wsiu.org/science-technology/2026-05-06/preserving-pollinators-is-good-for-health-and-income" class="source-row" target="_blank" rel="noopener noreferrer">
+        <div class="source-info">
+          <div class="source-outlet">NPR / WSIU</div>
+          <div class="source-author">Jonathan Lambert — Preserving pollinators is good for health and income</div>
+        </div>
+        <span class="source-btn">Read →</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="more-section">
+    <div class="more-section-inner">
+      <a href="/community.html" class="feature-card see-all">
+        <h3 style="margin-bottom:0;">See all community stories →</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="related-section">
+    <div class="related-section-inner">
+      <div class="section-label">You might also like</div>
+      <div class="three-col">
+        <a href="/prom-promise.html" class="mini-card">
+          <span class="tag" style="background: #FAC775; color: #412402;">Heartwarming</span>
+          <h4>A Wisconsin teenager kept a 14-year promise and took his Icelandic grandmother to prom.</h4>
+        </a>
+        <a href="/attenborough-100.html" class="mini-card">
+          <span class="tag" style="background: #7F77DD;">Wildlife</span>
+          <h4>David Attenborough turns 100 today — and the world is naming wasps, planting trees, and releasing butterflies in his honour.</h4>
+        </a>
+        <a href="/moringa-microplastics.html" class="mini-card">
+          <span class="tag" style="background: #378ADD;">Science</span>
+          <h4>A "miracle tree" that ancient Egyptians used to purify water can remove 98% of microplastics from drinking water.</h4>
+        </a>
       </div>
-      <span class="read-btn">Read →</span>
-    </a>
+    </div>
   </div>
 
   <div class="subscribe-section">
